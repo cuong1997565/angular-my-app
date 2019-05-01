@@ -1,0 +1,25 @@
+<div class="container" [style.margin-top.px] ="15" >
+  <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Temple Ref</h3>
+            </div>
+            <div class="panel-body">
+               <input type="text" class="form-control" #name>
+               <input type="text" class="form-control" ref-txtName>
+               <button
+                  type="button"
+                  class="btn btn-danger"
+                  [style.margin-top.px] ="15"
+                  (click) = "onGetData(name.value)"> Lấy dữ liệu </button>
+                  <button
+                  type="button"
+                  class="btn btn-success"
+                  [style.margin-top.px] ="15"
+                  (click) = "onGetDataComp()"> Lấy dữ liệu </button>
+                </div>
+          </div>
+      </div>
+  </div>
+</div>

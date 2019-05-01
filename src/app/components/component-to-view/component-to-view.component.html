@@ -1,0 +1,65 @@
+<h3> ComponentToView </h3>
+<h4> Name : {{ name }} </h4>
+<h4> Age : {{ age }} </h4>
+<h4> Tình trạng hôn nhân : {{ isBool }} </h4>
+<h4> Tình trạng hôn nhân : {{ isBool ? 'Đã kết hôn' : 'Chưa kết hôn' }} </h4>
+<h5> Tên đối tượng : {{ user.name }} </h5>
+<h5> Tuổi đối tượng : {{ user.age }} </h5>
+<h2> {{ showInfo() }} </h2>
+<img src="{{img}}" width="200px" height="200px">
+<a href="{{ link }}"> {{ name_link }} </a>
+<hr>
+<h3> Property Binding </h3>
+<img [src]="img"  [alt]="'Hình HotGirl'" [width] = "img_width" [height] = "img_height">
+<hr />
+<input type="text" class="form-control" [value] = "name">
+  <button
+    type="button"
+    class="btn btn-primary"
+    [disabled]="isValid"
+    >
+    Đăng nhập
+  </button>
+<hr />
+<h3> Attribute Binding </h3>
+<table [attr.border]="borderTable" [attr.width]="widthTable">
+  <tr>
+    <td>Id</td>
+    <td>Họ tên</td>
+    <td>Age</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Nguyễn Vân Vân</td>
+    <td>25</td>
+  </tr>
+</table>
+
+
+<h3> Class Binding </h3>
+<table [class.table-bordered]="isBorder">
+  <tr>
+    <td>Id</td>
+    <td>Họ tên</td>
+    <td>Age</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Nguyễn Vân Vân</td>
+    <td>25</td>
+  </tr>
+</table>
+<span
+    class="label"
+    [class.label-danger] = "isCheck === 1"
+    [class.label-success] = "isCheck !== 1">Label</span>
+
+  <div
+    [style.background-color] = "isSepecial ? 'red' : 'yellow'"
+    [style.color] = "white"
+    [style.font-size.px] = "size"
+    [style.width.px] = "200"
+    [style.height.px] = "200"
+    [style.margin-top.px] ="20"
+  ></div>
+

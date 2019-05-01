@@ -1,0 +1,13 @@
+<h1> {{ title }} </h1>
+<button type="button" class="btn btn-primary" (click)="onClickMe($event)" style="margin-right:15px">Click me</button>
+<button type="button" class="btn btn-primary" (dblclick)="onDBClickMe($event)">onDBClickMe</button>
+<hr />
+<h1> {{count}} </h1>
+<button type="button" class="btn btn-warning" (click)="onInc()">
+  Tang
+</button>
+<h4> {{ username }} </h4>
+<div class="form-group">
+  <label> Username :</label>
+  <input type="text" class="form-control" (keyup)="onKeyUp($event)">
+</div>

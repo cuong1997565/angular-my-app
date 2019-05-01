@@ -1,0 +1,16 @@
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title"> {{ title }} </h3>
+    </div>
+    <div class="panel-body">
+        <h3 class="text-center">tìm hiểu ngAfterView ngAfterViewChecked </h3>
+        <ul class="list-group" #arrayProducts>
+            <li class="list-group-item" *ngFor="let item of products">
+                {{ item.id }} - {{ item.name }} - {{  item.price }}
+            </li>
+        </ul>
+        <input type="text" class="form-control" #product>
+        <button type="button" class="btn btn-danger" (click)="addProduct(product.value)" >Click Me</button>
+    </div>
+</div>

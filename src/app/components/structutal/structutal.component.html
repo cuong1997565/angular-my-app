@@ -1,0 +1,85 @@
+<div>
+  <h4 class="text-danger"> NgIF </h4>
+  <h1 *ngIf="isShow"> {{ username }} </h1>
+<button type="button" class="btn btn-warning" (click)="onToggle()">Toggle</button>
+<div class="radio">
+      <label style="padding-right:15px">
+        <input type="radio" name="rdCheck" (click) = "onChange(true)">
+        Hợp lệ
+      </label>
+      <label>
+          <input type="radio" name="rdCheck" (click) = "onChange(false)">
+          Không hợp lệ
+        </label>
+</div>
+
+<h3 *ngIf="isCheck; else elseBlock"> Hợp lệ </h3>
+<ng-template #elseBlock>
+    <h3> Không hợp lệ </h3>
+</ng-template>
+
+<div class="btn-group">
+      <label> Tuổi : </label>
+      <input type="text" class="form-control"   [(ngModel)]  = "age" >
+</div>
+<h3 *ngIf="age > 18; else elseAge"> Lớn hơn 18 </h3>
+<ng-template #elseAge>
+    <h3> Nhỏ hơn 18 </h3>
+</ng-template>
+
+</div>
+
+<div>
+  <h4 class="text-info">*ngFor</h4>
+  <ul class="list-group-item" *ngFor="let item of names">
+    {{item}}
+
+  </ul>
+
+  <ng-container *ngIf="products.length > 0; else elseNoProducts">
+    <table class="table table-hover table-bordered">
+      <thead>
+        <tr>
+          <th> STT </th>
+          <th> Name </th>
+          <th> Price </th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr
+            *ngFor="let item of products;
+            let i = index
+            let f = first
+            let l = last
+            let e = even
+            let o = odd
+            trackBy : myTrackByFunction
+            "
+            [style.background-color] = "o === true ? 'red' : 'blue'"
+          >
+          <!-- [style.background-color] = "f === true ? 'gray' : 'white'"
+          [style.background-color] = "l === true ? 'cyan' : (f === true ? 'gray' : 'white')"
+          [style.background-color] = "e === true ? 'cyan' : 'red'"
+          -->
+          <td> {{  i + 1  }} </td>
+          <td> {{ item.name }} </td>
+          <td> {{ item.price }} </td>
+        </tr>
+      </tbody>
+    </table>
+   </ng-container>
+
+  <ng-template #elseNoProducts>
+      <h3> Cannot Not Product</h3>
+  </ng-template>
+
+  <button type="button" class="btn btn-warning" (click)="onLoadServe()">Load Data Server</button>
+  <ul class="list-group" style="margin-top:15px">
+    <ng-template ngFor let-name [ngForOf]="names" let-i="index" let-odd="odd" [ngForTrackBy]="trackById">
+        <li class="list-group-item"> {{ name }} </li>
+    </ng-template>
+  </ul>
+
+
+</div>
+
